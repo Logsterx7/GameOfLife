@@ -7,8 +7,8 @@ class PatternPulsar : public Pattern
 {
     // using Pattern::Pattern;
   public:
-    int sizeX = 13;
-    int sizeY = 13;
+    std::uint8_t sizeX = 13;
+    std::uint8_t sizeY = 13;
     bool patternGrid[13][13] = {
         { false, false, true, true, true, false, false, false, true, true, true, false, false },
         { false, false, false, false, false, false, false, false, false, false, false, false, false },

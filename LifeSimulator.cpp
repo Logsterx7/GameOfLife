@@ -26,12 +26,12 @@ LifeSimulator::LifeSimulator(std::uint8_t sizeX, std::uint8_t sizeY)
 void LifeSimulator::insertPattern(const Pattern& pattern, std::uint8_t startX, std::uint8_t startY)
 {
 
-    unsigned int x = pattern.getSizeX();
-    unsigned int y = pattern.getSizeY();
+    std::uint8_t x = pattern.getSizeX();
+    std::uint8_t y = pattern.getSizeY();
 
-    for (unsigned int i = 0; i < y; i++)
+    for (std::uint8_t i = 0; i < y; i++)
     {
-        for (unsigned int j = 0; j < x; j++)
+        for (std::uint8_t j = 0; j < x; j++)
         {
             if ((i + startY) >= 0 && (j + startX) >= 0 && (i + startY) < getSizeY() && (j + startX) < getSizeX())
             {
@@ -49,14 +49,14 @@ int LifeSimulator::countCells(int xPos, int yPos)
     yPos -= 1;
     int count = 0;
     // iterates through bordering cells
-    for (int i = 0; i < 3; i++)
+    for (std::uint8_t i = 0; i < 3; i++)
     {
-        for (int j = 0; j < 3; j++)
+        for (std::uint8_t j = 0; j < 3; j++)
         {
             if ((i + yPos) >= 0 && (j + xPos) >= 0 && (i + yPos) < getSizeY() && (j + xPos) < getSizeX())
             {
 
-                if (getCell(j + xPos, i + yPos))
+                if (getCell(static_cast<std::uint8_t>(j + xPos), static_cast<std::uint8_t>(i + yPos)))
                 {
                     // if j and i are both one we are 1, we don't need to count this cell since it's our starter cell
                     if (j == 1 && i == 1)
@@ -77,9 +77,9 @@ int LifeSimulator::countCells(int xPos, int yPos)
 void LifeSimulator::update()
 {
     std::vector<std::vector<bool>> newGrid(getSizeY(), std::vector<bool>(getSizeX(), false));
-    for (int i = 0; i < getSizeY(); i++)
+    for (std::uint8_t i = 0; i < getSizeY(); i++)
     {
-        for (int j = 0; j < getSizeX(); j++)
+        for (std::uint8_t j = 0; j < getSizeX(); j++)
         {
 
             int cellCount = countCells(j, i);

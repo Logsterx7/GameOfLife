@@ -23,5 +23,3 @@ bool PatternAcorn::getCell(std::uint8_t x, std::uint8_t y) const
 
     return patternGrid[y][x];
 };
-
-;

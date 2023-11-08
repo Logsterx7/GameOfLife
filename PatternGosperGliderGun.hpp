@@ -7,8 +7,8 @@ class PatternGosperGliderGun : public Pattern
 {
     // using Pattern::Pattern;
   public:
-    int sizeX = 36;
-    int sizeY = 9;
+    std::uint8_t sizeX = 36;
+    std::uint8_t sizeY = 9;
     bool patternGrid[9][36] = {
         { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false },
         { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, true, false, false, false, false, false, false, false, false, false, false, false },

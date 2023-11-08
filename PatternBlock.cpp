@@ -20,6 +20,5 @@ bool PatternBlock::getCell(std::uint8_t x, std::uint8_t y) const
     {
         return false;
     }
-    int;
     return patternGrid[y][x];
 };

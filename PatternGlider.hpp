@@ -7,8 +7,8 @@ class PatternGlider : public Pattern
 {
     // using Pattern::Pattern;
   public:
-    int sizeX = 3;
-    int sizeY = 3;
+    std::uint8_t sizeX = 3;
+    std::uint8_t sizeY = 3;
     bool patternGrid[3][3] = { { false, false, true },
                                { true, false, true },
                                { false, true, true } };

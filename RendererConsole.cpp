@@ -6,16 +6,16 @@
 
 void RendererConsole::render(const LifeSimulator& simulation)
 {
-    previousState.size();
-    int sizeY = simulation.getSizeY();
-    int sizeX = simulation.getSizeX();
+
+    std::uint8_t sizeY = simulation.getSizeY();
+    std::uint8_t sizeX = simulation.getSizeX();
 
     if (previousState.size() == 0)
     {
         std::vector<std::vector<bool>> makeGrid(sizeY, std::vector<bool>(sizeX, false));
-        for (int i = 0; i < sizeY; i++)
+        for (std::uint8_t i = 0; i < sizeY; i++)
         {
-            for (int j = 0; j < sizeX; j++)
+            for (std::uint8_t j = 0; j < sizeX; j++)
             {
                 makeGrid[i][j] = simulation.getCell(j, i);
                 rlutil::locate(j + 1, i + 1);
@@ -33,9 +33,9 @@ void RendererConsole::render(const LifeSimulator& simulation)
     }
     else
     {
-        for (int i = 0; i < sizeY; i++)
+        for (std::uint8_t i = 0; i < sizeY; i++)
         {
-            for (int j = 0; j < sizeX; j++)
+            for (std::uint8_t j = 0; j < sizeX; j++)
             {
 
                 if (previousState[i][j] != simulation.getCell(j, i))

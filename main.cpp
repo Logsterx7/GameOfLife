@@ -14,24 +14,24 @@
 #include <vector>
 int main()
 {
-    int cols = static_cast<int>(rlutil::tcols());
-    int rows = static_cast<int>(rlutil::trows());
+    std::uint8_t cols = static_cast<std::uint8_t>(rlutil::tcols());
+    std::uint8_t rows = static_cast<std::uint8_t>(rlutil::trows());
 
     LifeSimulator sim(cols, rows);
     RendererConsole pic;
     sim.insertPattern(PatternGosperGliderGun(), 20, 1);
     sim.insertPattern(PatternPulsar(), 100, 10);
+    sim.insertPattern(PatternBlinker(), 50, 10);
+    sim.insertPattern(PatternBlock(), 5, 25);
     rlutil::cls();
-    int yeah = 0;
-    while (yeah < 10)
+
+    while (true)
     {
         rlutil::hidecursor();
         pic.render(sim);
-        rlutil::showcursor();
         sim.update();
         std::cout << std::flush;
-        std::this_thread::sleep_for(std::chrono::milliseconds(50));
-        yeah++;
+        std::this_thread::sleep_for(std::chrono::milliseconds(20));
     }
     return 0;
 }

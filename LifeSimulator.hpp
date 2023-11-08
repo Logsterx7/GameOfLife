@@ -19,8 +19,8 @@ class LifeSimulator
     bool getCell(std::uint8_t x, std::uint8_t y) const;
 
   private:
-    int m_sizeX;
-    int m_sizeY;
+    std::uint8_t m_sizeX;
+    std::uint8_t m_sizeY;
     std::vector<std::vector<bool>> m_grid;
 
     int countCells(int xPos, int Ypos);

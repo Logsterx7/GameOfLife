@@ -7,8 +7,8 @@ class PatternAcorn : public Pattern
 {
     // using Pattern::Pattern;
   public:
-    int sizeX = 7;
-    int sizeY = 3;
+    std::uint8_t sizeX = 7;
+    std::uint8_t sizeY = 3;
     bool patternGrid[3][7] = { { false, true, false, false, false, false, false },
                                { false, false, false, true, false, false, false },
                                { true, true, false, false, true, true, true } };
